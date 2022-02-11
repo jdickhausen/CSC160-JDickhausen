@@ -9,20 +9,17 @@ public class Time
 		// print the percentage of the day that is left
 		int hour = 20;
 		int minute = 30;
+		double hoursInDay = 24;
+		double minutesInHour = 60;
+		double secondsInMinute = 60;
 		System.out.print("The current time is ");
-		System.out.print(hour);
-		System.out.print(":");
-		System.out.print(minute);
-		System.out.println(".");
-		System.out.print("It has been ");
-		System.out.print(hour * 3600 + minute * 60);
-		System.out.println(" seconds since midnight.");
-		double secondsSince = 73800;
+		System.out.println(hour + ":" + minute + ".");
+		System.out.println("It has been " + secondsInMinute * minutesInHour * hour + " seconds since midnight.");
 		System.out.print("There are ");
-		System.out.print(86400 - secondsSince);
+		System.out.print((secondsInMinute*minutesInHour*hoursInDay) - (secondsInMinute*minutesInHour*hour));
 		System.out.println(" seconds left in the day.");
-		System.out.print("The percentage of the day left is ");
-		System.out.print(12600.0/864.0);
+		System.out.print("The percentage of the day that has past is ");
+		System.out.print((secondsInMinute*minutesInHour*hour)/(secondsInMinute*minutesInHour*hoursInDay) * 100);
 		System.out.println("%.");
 	}
 }

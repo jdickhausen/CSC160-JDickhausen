@@ -2,12 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessMyNumber {
-
-
-	//public static int Guess (int playerGuess) {
-		
-		//return playerGuess;
-	//}
+	
 	public static void main(String[] args) {
 		System.out.println("Guess a number between 1-100: ");
 		Scanner guess = new Scanner(System.in);
