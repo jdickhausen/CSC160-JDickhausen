@@ -5,15 +5,22 @@ public class TempConverter {
 		Scanner input = new Scanner(System.in);
 		//declare variables
 		// convert far to cel
-		double far;
-		System.out.println("Enter temperature: ");
-		far = input.nextDouble();
-		double cel;
-		cel = ((far - 32.0)*(5.0/9.0));
+		System.out.println("Enter farenheit temperature: ");
+		double far = input.nextDouble();
+		double cel = ConvertToCel(far);
 		System.out.println (cel + " degrees celsius");
-		//convert cel to far
-		//far = (cel*(9.0/5.0)+32);
-		System.out.println(far + " degreess farenheit");
+		System.out.println("Enter celsius temperature: ");
+		double celsius = input.nextDouble();
+		double farenheit = ConvertToFar(cel);
+		System.out.println(farenheit + " degreess farenheit");
 	}
-
+	public static double ConvertToCel(double far) {
+		double cel = ((far - 32.0)*(5.0/9.0));
+		return cel;
+	}
+	public static double ConvertToFar(double celsius){
+		//convert cel to far
+		double farenheit = (celsius*(9.0/5.0)+32);
+		return farenheit;
+	}
 }

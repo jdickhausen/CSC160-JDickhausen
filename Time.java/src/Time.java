@@ -17,11 +17,12 @@ public class Time
 		System.out.print("It has been ");
 		System.out.print(hour * 3600 + minute * 60);
 		System.out.println(" seconds since midnight.");
+		double secondsSince = 73800;
 		System.out.print("There are ");
-		System.out.print(86400 - 73800);
+		System.out.print(86400 - secondsSince);
 		System.out.println(" seconds left in the day.");
 		System.out.print("The percentage of the day left is ");
-		System.out.print(12600.0 / 864.0);
+		System.out.print(12600.0/864.0);
 		System.out.println("%.");
 	}
 }
