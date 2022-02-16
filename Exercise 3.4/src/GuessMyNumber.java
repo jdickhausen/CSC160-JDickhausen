@@ -10,13 +10,14 @@ public class GuessMyNumber {
 		System.out.println("Your guess is: " + playerGuess);
 		Random random = new Random();
 		int number = random.nextInt(100) + 1;
+		
 		if (playerGuess == number) {
 			System.out.println("You got it!");
 		}
 		else {
-		System.out.println("The number I thought of was: " + number);
-		System.out.println ("You were off by: ");
-		System.out.println (Math.abs(number - playerGuess));
+			System.out.println("The number I thought of was: " + number);
+			System.out.println ("You were off by: ");
+			System.out.println (Math.abs(number - playerGuess));
 		}
 	}
 
