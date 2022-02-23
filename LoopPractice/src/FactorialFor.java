@@ -5,14 +5,14 @@ public class FactorialFor {
 		Scanner input;
 		input = new Scanner(System.in);
 		int chosenNumber;
-		int total;
+		int total = 1;
 		
 		System.out.print("Choose a number: ");
 		chosenNumber = input.nextInt();
 		for(int i = 0; i <= chosenNumber; i++) {
-			total = chosenNumber*i;
-			System.out.print(total);
+			total = total*i;
 		}
+		System.out.print(total);
 	}
 
 }
