@@ -3,7 +3,7 @@ public class Exercise6_6 {
 
 	public static void main(String[] args) {
 		String tiles = "racecar";
-		String scrabbleWord = "unir";
+		String scrabbleWord = "car";
 		
 		if (canSpell(tiles, scrabbleWord)) {
 			System.out.print("It works");
