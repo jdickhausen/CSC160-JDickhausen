@@ -20,7 +20,7 @@ public class RightAngleLoop {
 		//printing right triangle for specified number of rows
 		for(int i = 1; i <= chosenNum; i++) {
 			for(int j = 1; j<=i; j++) {
-				System.out.print(chosenNumber++);
+				System.out.print(j);
 			}
 			System.out.println("");
 		}

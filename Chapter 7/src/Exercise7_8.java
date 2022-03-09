@@ -14,6 +14,8 @@ public class Exercise7_8 {
 		}
 	}
 	public static boolean isAnogram (String word1, String word2) {
+		word1 = word1.toLowerCase();
+		word2 = word2.toLowerCase();
 		char[] myArray1 = word1.toCharArray();
 		char[] myArray2= word2.toCharArray();
 		if (myArray1.length != myArray2.length) {

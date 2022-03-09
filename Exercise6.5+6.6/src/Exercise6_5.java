@@ -2,7 +2,7 @@
 public class Exercise6_5 {
 
 	public static void main(String[] args) {
-		String wordCheck = "noon";
+		String wordCheck = "Noon";
 		if (isDoubloon(wordCheck)) {
 			System.out.print("It is a doubloon");
 		}
@@ -11,7 +11,7 @@ public class Exercise6_5 {
 		}
 	}
 	public static boolean isDoubloon(String wordCheck) {
-		wordCheck.toLowerCase();
+		wordCheck = wordCheck.toLowerCase();
 		boolean doubloonCheck = true;
 		for(int i= 0; i<wordCheck.length();i++){
 			int count=0;
