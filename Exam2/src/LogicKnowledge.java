@@ -23,7 +23,6 @@ public class LogicKnowledge {
 		small = 4;
 		large = 1;
 		goal = 9;
-		
-		}
+		return goal;
 	}
 }
