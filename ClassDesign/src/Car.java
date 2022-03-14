@@ -9,17 +9,21 @@ public class Car {
 	// Constructors
 	public Car() {
 		color = "Green";
-		amountOfGas = 12.0;
+		amountOfGas = 10.0;
+		mileage = 10;
 	}
 	public Car(String requestedColor) {
-		color = requestedColor;
+		this.color = requestedColor;
 	}
-	public Car(String orderedColor, double amountOfGas) {
-		color = orderedColor;
+	public Car(String orderedColor, double amountOfGas, int mileage) {
+		super();
+		this.color = orderedColor;
 		this.amountOfGas = amountOfGas;
+		this.mileage = mileage;
 	}
-	// Accessors
+	// Accessors and Mutators
 	// Getters and Setters
+	// need getters and setters because data members are private
 	public String getColor() {
 		return color;
 	}
