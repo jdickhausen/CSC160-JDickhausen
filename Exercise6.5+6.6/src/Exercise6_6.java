@@ -23,7 +23,7 @@ public class Exercise6_6 {
 				return false;
 			}
 			else {
-				int location = tiles.indexOf (word.codePointAt(i));
+				int location = tiles.indexOf (word.charAt(i));
 				tiles = tiles.substring(0, location) + tiles.substring(location + 1, tiles.length());
 			}
 		}
