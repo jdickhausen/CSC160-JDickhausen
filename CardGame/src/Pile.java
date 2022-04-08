@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Pile {
-	private ArrayList <Card> cards;
+	protected ArrayList <Card> cards;
 	
 	public Pile() {
 		cards = new ArrayList<>();
