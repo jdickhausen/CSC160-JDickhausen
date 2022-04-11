@@ -4,19 +4,14 @@ import java.util.Scanner;
 public class CSclasses {
 	static ArrayList<Courses> courseList = new ArrayList<Courses>();
 	
+	Scanner input = new Scanner(System.in);
+	
 	public static void main(String[] args) {
 		
-//		FullRemoteCourse c1 = new FullRemoteCourse("MAT121",12, 20, 4, "frcc@class.edu");
-//		courseList.add(c1);
-//		
-//		InPersonCourse c2 = new InPersonCourse("CSC 160", 25, 30, 4, "BP119");
-//		courseList.add(c2);
-//		
-//		RealTimeRemoteCourse c3 = new RealTimeRemoteCourse("SOC 101", 18, 30, 3, "A1B2");
-//		courseList.add(c3);
-		
-		char ans = 'y';
+		Courses c1;
+		String ans = "yes";
 		String classType; 
+		String onlineType;
 		String course;
 		int numStudents;
 		int maxStudents;
@@ -25,24 +20,58 @@ public class CSclasses {
 		String email;
 		String room;
 		Scanner input = new Scanner(System.in);
-		while (ans == 'y') {
-			System.out.print("Is your class online or in person?");
-			classType = input.next();
-			if (classType.equals("online")){
-				System.out.println("Course number?");
-				course = input.next();
+		Scanner input1 = new Scanner(System.in);
+		Scanner input2 = new Scanner(System.in);
+		while (ans.equals ("yes")) {
+			
+			System.out.println("What is your course number?");
+			course = input.next();
+			System.out.println("How many students are in your class?");
+			numStudents = input.nextInt();
+			System.out.println("How many students can be in your class?");
+			maxStudents = input.nextInt();
+			System.out.println("How many credits is your class?");
+			credits = input.nextInt();
+			
+			System.out.println("Is your course online?");
+			classType = input1.nextLine();
+			
+			if (classType.equals("yes")) {
+				System.out.println("Is it real time or full remote?");
+				onlineType = input1.nextLine();
+				if (onlineType.equals("real time")) {
+					System.out.println("What is the zoom ID");
+					zoomID = input1.nextLine();
+					c1 = new RealTimeRemoteCourse(course, numStudents, maxStudents, credits, zoomID);
+					courseList.add(c1);
+				}
+				else if (onlineType.equals("full remote")){
+					System.out.println("What is the email?");
+					email = input1.nextLine();
+					c1 = new FullRemoteCourse(course, numStudents, maxStudents, credits, email);
+					courseList.add(c1);
+				}
 			}
-			for (int i = 0; i < courseList.size(); i ++) {
-				System.out.println(courseList.get(i) + "\n");
-			}
-		//courseDetails();
+			else if (classType.equals("no")){
+				System.out.println("What is the room?");
+				room = input1.nextLine();
+				c1 = new InPersonCourse(course, numStudents, maxStudents, credits, room);
+				courseList.add(c1);
+		}
+			System.out.println("Do you have another class?");
+			ans = input2.nextLine();
+		}
+		courseDetails();
+		System.out.println("\n" + "Done");
+			
+	}
+	public static void courseDetails() {
+		for (int i = 0; i < courseList.size(); i++) {
+			System.out.println(courseList.get(i) + "\n");
 		}
 	}
-	public void courseDetails() {
-		System.out.println();
-	}
 	public static void noStringCourseDetails() {
-		// pass object into parameters
+		
 	}
-
+	
 }

@@ -23,12 +23,13 @@ public class TestScohoolRecords {
 		Staff s2 = new Staff ("Mark", "444 G st", "555-555-555", "s2@frcc", "main", "70,000", "6/15/18", "Staff member");
 		personList.add(s2);
 		
-		for (int i = 0; i < personList.size(); i++) {
-			if (personList.get(i) instanceof Student) {
-				student1.getAdress();
-				System.out.println(student1);
+		for (Person person: personList) {
+			if (person instanceof Student) {
+				System.out.println();
 			}
-			System.out.println();
+			else if (person instanceof Faculty) {
+				
+			}
 		}
 	}
 
