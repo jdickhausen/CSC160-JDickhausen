@@ -1,11 +1,10 @@
-import java.util.Scanner;
 
 public class Bird {
 	
 	private String size;
 
 	public String getSize() {
-		return size;
+		return this.size;
 	}
 
 	public void setSize(String size) {
