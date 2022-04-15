@@ -25,7 +25,7 @@ public class CSclasses {
 		while (ans.equals ("y")) {
 			
 			System.out.println("What is your course number?");
-			courseNum = input.nextLine();
+			courseNum = input1.nextLine();
 			System.out.println("How many students are in your class?");
 			numStudents = input.nextInt();
 			System.out.println("How many students can be in your class?");
@@ -61,6 +61,7 @@ public class CSclasses {
 			System.out.println("Do you have another class?" + "\n" + "If yes, press y." + "\n" + "If no, press n.");
 			ans = input2.nextLine();
 		}
+		System.out.println("\n");
 		courseDetails();
 		System.out.println("\n" + "Done");
 			
