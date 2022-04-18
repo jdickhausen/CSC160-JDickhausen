@@ -61,4 +61,30 @@ public class Deck {
 			swapCards(min_idx, i);
 		}
 	}
+	public void recursiveSelectionSort() {
+		recursiveHelper(cards, 0, cards.length-1);
+		
+	}
+	private void recursiveHelper(Card cards[], int low, int high) {
+		if (low < high) {
+			int index = low;
+			Card min = cards[low];
+			for (int i = index+1; i <= high; i++) {
+				if (cards[i].compareTo(cards[low]) < 0) {
+					index = i;
+				}
+			}
+		}
+	} 
+	public void mergeSort() {
+		mergeHelper(cards, 0, cards.length-1);
+	}
+	private void mergeHelper(Card cards[], int low, int high) {
+		if (low >= high) {
+		
+		}
+		mergeHelper(cards, low,(low+high)/2);
+		mergeHelper (cards, ((low + high)/2) + 1, high);
+		
+	}
 }
