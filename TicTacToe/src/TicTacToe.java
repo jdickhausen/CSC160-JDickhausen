@@ -42,15 +42,19 @@ public class TicTacToe {
 				player = player1;
 				icon = '2';
 			}
-			
+			// check for winners or full board
 			if (winnerCheck() == 'X') {
 				System.out.println("Player 1 wins" + "\n");
 				break;
 			}
-			if (winnerCheck() == 'O') {
+			else if (winnerCheck() == 'O') {
 				System.out.println("Player 2 wins" + "\n");
 				break;
 			}
+			else if (winnerCheck() == 'D') {
+				System.out.println("Game is a draw!");
+			}
+			// placing player mark on board
 			System.out.println("Player " + icon + " choose your mark");
 			int spot = input.nextInt();
 			if (spot == 1) {
@@ -142,10 +146,12 @@ public class TicTacToe {
 		    if (board[2][0] == 'O' && board[1][1] == 'O' && board[0][2] == 'O') {
 		        return 'O'; 
 		    }
+		    // check for draw
 		    if (board[0][0] != '1' && board[0][1] != '2' && board[0][2] != '3' && board[1][0] != '4' && board[1][1] != '5' && board[1][2] != '6'
 		        && board[2][0] != '7' && board[2][1] != '8' && board[2][2] != '9') {
 		        return 'D'; 
 		    }
+		    // W is no winner
 		    else {
 		        return 'W'; 
 		    }
