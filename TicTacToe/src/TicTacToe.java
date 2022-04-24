@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 Joshua Dickhausen
+ */
+
 import java.util.Scanner;
 
 public class TicTacToe {
@@ -20,9 +24,6 @@ public class TicTacToe {
 		System.out.println("   |   |   ");
 		System.out.println(" " + board[2][0] + " | " + board[2][1] + " | " + board[2][2] + " ");
 		System.out.println("   |   |   ");
-		
-	}
-	public static void player() {
 		
 	}
 	public static void pickSpot() {
@@ -53,6 +54,7 @@ public class TicTacToe {
 			}
 			else if (winnerCheck() == 'D') {
 				System.out.println("Game is a draw!");
+				break;
 			}
 			// placing player mark on board
 			System.out.println("Player " + icon + " choose your mark");
@@ -96,6 +98,7 @@ public class TicTacToe {
 		}
 			
 	}
+	
 	public static char winnerCheck() {
 		 	// player X winner check
 			if (board[0][0] == 'X' && board[0][1] == 'X' && board[0][2] == 'X') {

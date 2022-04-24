@@ -1,10 +1,26 @@
+/*
+ * Copyright (c) 2022 Joshua Dickhausen
+ */
+
 import java.util.Arrays;
 import java.util.Random;
 
+/** 
+ *this deck models a deck of cards and adds methods to manipulate the deck
+ * @author Joshua Dickhausen
+ *
+ */
+
 public class Deck {
+	/**
+	 * Card array holds each card of the deck
+	 */
 	public Card[] cards;
 	private static final Random random = new Random();
 	
+	/**
+	 * initializes a deck of 52 cards
+	 */
 	public Deck () {
 		this.cards = new Card [52];
 		int index = 0;
@@ -15,6 +31,10 @@ public class Deck {
 			}
 		}
 	}
+	/**
+	 * initializes array and does not assign any specific number of cards 
+	 * @param n is number of cards
+	 */
 	public Deck (int n) {
 		this.cards = new Card[n];
 	}
@@ -25,24 +45,45 @@ public class Deck {
 		}
 		return subdeck;
 	}
-	
+	/**
+	 * return cards as a String
+	 */
 	public String toString() {
 		return Arrays.toString(this.cards);
 	}
+	/**
+	 * getting random number
+	 * @param low
+	 * @param high
+	 * @return random integer that represents card
+	 */
 	public static int randomInt(int low, int high){
 	      return random.nextInt(Math.max(high,low) - Math.min(high,low) + 1) + low;
 	}
+	/**
+	 * returns each card of the deck in array cards
+	 * @return cards
+	 */
 	public Card[] getCards() {
 		return cards;
 	}
+
 	public void setCards(Card[] cards) {
 		this.cards = cards;
 	}
+	/**
+	 * swaps cards in the deck
+	 * @param i
+	 * @param j
+	 */
 	public void swapCards (int i, int j) {
 		Card temp = cards[i];
 		cards[i] = cards[j];
 		cards[j] = temp;
 	}
+	/**
+	 * shuffles elements in cards array
+	 */
 	public void shuffle () {
 		for (int i = 0; i < cards.length; i++) {
 			int j = random.nextInt(cards.length);
@@ -50,6 +91,10 @@ public class Deck {
 			
 		}
 	}
+	/**
+	 * uses selection sort to put elements of cards array in order
+	 * @param n
+	 */
 	public void selectionSort(int n) {
 		for (int i = 0; i < n-1; i++){
 			int min_idx = i;
