@@ -29,9 +29,8 @@ public class StringKnowledge {
 		String plusChar = "+";
 		String newWord = "";
 		int index = str.indexOf(word);
-		while(index < str.length()) {
-			index++;
-			newWord = newWord + str.replace(str.substring(0, index), plusChar) + word;
+		for (int i = 0; i < str.length(); i++) {
+			
 		}
 		return newWord;
 	}
