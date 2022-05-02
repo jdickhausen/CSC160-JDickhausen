@@ -10,7 +10,6 @@ public class Courses {
 	}
 
 	public Courses(String courseNumber, int numStudents, int maxStudents, int credits) {
-		
 		this.courseNumber = courseNumber;
 		this.numStudents = numStudents;
 		this.maxStudents = maxStudents;

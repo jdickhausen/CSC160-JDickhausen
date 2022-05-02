@@ -15,9 +15,10 @@ public class FileWrite {
 		PrintWriter printWriter = new PrintWriter(new FileOutputStream(myFile.getName(), true));
 		printWriter.println("But I am still happy."); // Adds to full moon line in file
 		if (printWriter.checkError()) {
-			System.out.println("There were erros in writing.");
+			System.out.println("There were errors in writing.");
 		}
 		printWriter.close();
+		//printer.flush to flush buffer
 	}
 
 }
