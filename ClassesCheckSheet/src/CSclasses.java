@@ -87,20 +87,14 @@ public class CSclasses {
 		}
 		PrintWriter classWriter = new PrintWriter(new FileOutputStream(myFile.getName(), true));
 		for(Courses course: courseList) {
-			 // do for all superclass gets
+			classWriter.print(course.getCourseNumber() + "," + course.getMaxStudents() + "," + course.getNumStudents() + "," + course.getCredits()); 
 			if (course instanceof FullRemoteCourse) { // do for each course type
-				classWriter.print("FR");
-				classWriter.print(course.getCourseNumber() + "," + course.getMaxStudents() + "," + course.getNumStudents() + "," + course.getCredits());
 				classWriter.print("," + ((FullRemoteCourse)course).getEmail());
 			}
 			else if (course instanceof RealTimeRemoteCourse) {
-				classWriter.print("RTR");
-				classWriter.print(course.getCourseNumber() + "," + course.getMaxStudents() + "," + course.getNumStudents() + "," + course.getCredits());
 				classWriter.print("," + ((RealTimeRemoteCourse)course).getZoomId());
 			}
 			else if (course instanceof InPersonCourse) {
-				classWriter.print("IP");
-				classWriter.print(course.getCourseNumber() + "," + course.getMaxStudents() + "," + course.getNumStudents() + "," + course.getCredits());
 				classWriter.print("," + ((InPersonCourse)course).getRoomNumber());
 			}
 			classWriter.println();
@@ -132,7 +126,7 @@ public class CSclasses {
 		while (input.hasNextLine()) {
 			String line = input.nextLine();
 			line.split(",");
-			if (line.equals("IP")) { // check when 2 in persons in a row it repeats!!!!
+			if (line.equals("In Person")) { // check when 2 in persons in a row it repeats!!!!
 				courseNum = input.nextLine();
 				numStudents = Integer.parseInt(input.nextLine());
 				maxStudents = Integer.parseInt(input.nextLine());
@@ -140,7 +134,7 @@ public class CSclasses {
 				room = input.nextLine();
 				course1 = new InPersonCourse(courseNum, numStudents, maxStudents, credits, room);
 			}
-			else if (line.equals("FR")) {
+			else if (line.equals("Full Remote")) {
 				courseNum = input.nextLine();
 				numStudents = Integer.parseInt(input.nextLine());
 				maxStudents = Integer.parseInt(input.nextLine());
@@ -148,7 +142,7 @@ public class CSclasses {
 				email = input.nextLine();
 				course1 = new FullRemoteCourse(courseNum, numStudents, maxStudents, credits, email);
 			}
-			else if (line.equals("RTR")) {
+			else if (line.equals("Real Time Remote")) {
 				courseNum = input.nextLine();
 				numStudents = Integer.parseInt(input.nextLine());
 				maxStudents = Integer.parseInt(input.nextLine());
