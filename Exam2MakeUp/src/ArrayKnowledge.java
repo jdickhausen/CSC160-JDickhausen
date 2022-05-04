@@ -12,7 +12,7 @@ public class ArrayKnowledge {
 		return false;
 	}
 	public static int [] zeroFront() {
-		int[] nums= {1, 5, 0, 1, 2, 3, 1};
+		int[] nums= {0, 5, 0, 1, 2, 3, 1};
 		int count = 0;
 		
 		for (int i = 0; i < nums.length; i++) {
