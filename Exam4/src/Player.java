@@ -1,12 +1,15 @@
 
 public class Player extends Die{
 	private String name;
-	private String die;
+	private Die die;
 	
-	public Player (String name, String die, int value) {
+	public Player (String name, Die die) {
 		super();
 		this.name = name;
 		this.die = die;
+	}
+	public Player () {
+		
 	}
 	public String getName() {
 		return name;
@@ -14,10 +17,10 @@ public class Player extends Die{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDie() {
+	public Die getDie() {
 		return die;
 	}
-	public void setDie(String die) {
+	public void setDie(Die die) {
 		this.die = die;
 	}
 }
